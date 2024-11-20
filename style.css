@@ -22,8 +22,11 @@ body {
     border: 5px solid rgba(255, 255, 255, 0.6);
     width: 40%;
     height: 80%;
+    box-shadow: 10px 8px 8px rgba(34,193,195);
 }
+
 /* Ekran kalkulatora */
+
 header {
     align-self: center;
     margin: 10px;
@@ -35,6 +38,31 @@ header {
     box-shadow: 3px 3px 4px rgb(129, 148, 100), -3px -3px 4px rgb(129, 148, 100)
 }
 h1 {
+    font-family: "Doto", serif;
+    font-weight: bold;
     display: flex;
     justify-content: flex-end;
+}
+
+/* Przyciski Kalkulatora */
+
+.buttons {
+    padding: 30px;
+    gap: 20px;
+    justify-self: center;
+    align-self: center ;
+    font-size: 40px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.buttons div {
+    background-color: rgba(255, 255, 255, .2);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.buttons div:last-of-type {
+    grid-column: 3/5;
 }
