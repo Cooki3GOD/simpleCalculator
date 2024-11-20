@@ -11,11 +11,16 @@ console.log(operatorBtns);
 function toScreen() { // funckja dopsujaca liczby na ekran kalkualtora
     integerBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            if(display.innerText == 0) { // if zamieniajacy pierwsza liczbe 0 na kliknieta aby uniknac liczby np 0002
-                display.innerText = event.target.innerText;
+            if(display.innerText.length < 11) {
+                if(display.innerText == 0) { // if zamieniajacy pierwsza liczbe 0 na kliknieta aby uniknac liczby np 0002
+                    display.innerText = event.target.innerText;
+                }
+                else {
+                    display.innerText += event.target.innerText;
+                }
             }
             else {
-                display.innerText += event.target.innerText;
+                alert("Za dużo znaków!");
             }
         })
     })
