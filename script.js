@@ -14,6 +14,7 @@ function toScreen() { // funckja dopsujaca liczby na ekran kalkualtora
             if(display.innerText.length < 11) {
                 if(display.innerText == 0) { // if zamieniajacy pierwsza liczbe 0 na kliknieta aby uniknac liczby np 0002
                     display.innerText = event.target.innerText;
+                    let lastDigit = event.target.innerText;
                 }
                 else {
                     display.innerText += event.target.innerText;
@@ -32,7 +33,18 @@ function reset() { // funckja czyszaca ekran kalkulatora
     })
 }
 
+function delDigit() { // Funckja usuwa ostania wpisana liczbe
+    operatorBtns[1].addEventListener("click", (btn) => {
+        if( display.textContent.length == 0 || display.textContent.length == 1) {
+            return;
+        }
+        else {
+            display.textContent  = display.textContent.slice(0, -1);
+        }
+    })
+}
 // Wywolania funkcji
 
 toScreen();
 reset();
+delDigit(); 
