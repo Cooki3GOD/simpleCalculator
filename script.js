@@ -4,7 +4,7 @@ const integerBtns = document.querySelectorAll(".integer");
 const operatorBtns = document.querySelectorAll(".operator");
 const resetBtn = document.querySelector(".reset");
 const deleteBtn = document.querySelector(".delete");
-const calcButn = document.querySelector(".calcualte");
+const calcButn = document.querySelector(".calculate");
 let num1 = 0;
 let num2 = 0;
 let op;
@@ -33,6 +33,10 @@ function toScreen() { // funckja dopsujaca liczby na ekran kalkualtora
 function reset() { // funckja czyszaca ekran kalkulatora
     resetBtn.addEventListener("click", () => {
         display.innerText = 0;
+        num1 = 0;
+        num2 = 0;
+        op = 0;
+        score = 0;
     })
 }
 
@@ -47,16 +51,54 @@ function delDigit() { // Funckja usuwa ostania wpisana liczbe
     })
 }
 
-function operator() {
+function operator() { // funkcja przypisujace wartosci do zmiennej operator
    operatorBtns.forEach((btn) => {
      btn.addEventListener("click", () => {
         op = event.target.innerText;
         console.log(op);
-})
+        num1 = parseFloat(display.innerText);
+        display.innerText = num2;
+    })
 })
 }
+
+function calculate() { // funckja obliczajaca wynik
+    let score = 0;
+    calcButn.addEventListener("click", () => {
+        num2 = parseFloat(display.innerText);
+        switch (op) {
+            case "+":
+                score = num1 + num2;
+                display.innerText = score;
+                break;
+            case "%":
+                score = num1 % num2;
+                display.innerText = score;
+                break;
+                case "-":
+                    score = num1 - num2;
+                    display.innerText = score;
+                    break;
+                case "X":
+                    score = num1 * num2;
+                    display.innerText = score;
+                    break;  
+                case "/":
+                    score = num1 / num2;
+                    display.innerText = score;
+                    break;                           
+            default:
+                break;
+        }
+     })
+}
+
+
+
 // Wywolania funkcji
 
 toScreen();
 reset();
 delDigit(); 
+operator();
+calculate();
