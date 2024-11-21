@@ -1,13 +1,13 @@
-// Consty
+// Zmienne
 const display = document.querySelector('h1');
 const integerBtns = document.querySelectorAll(".integer");
 const operatorBtns = document.querySelectorAll(".operator");
 const resetBtn = document.querySelector(".reset");
 const deleteBtn = document.querySelector(".delete");
 const calcButn = document.querySelector(".calcualte");
-console.log(display);
-console.log(integerBtns);
-console.log(operatorBtns);
+let num1 = 0;
+let num2 = 0;
+let op;
 
 // funckje
 
@@ -47,6 +47,14 @@ function delDigit() { // Funckja usuwa ostania wpisana liczbe
     })
 }
 
+function operator() {
+   operatorBtns.forEach((btn) => {
+     btn.addEventListener("click", () => {
+        op = event.target.innerText;
+        console.log(op);
+})
+})
+}
 // Wywolania funkcji
 
 toScreen();
