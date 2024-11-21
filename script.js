@@ -4,6 +4,7 @@ const integerBtns = document.querySelectorAll(".integer");
 const operatorBtns = document.querySelectorAll(".operator");
 const resetBtn = document.querySelector(".reset");
 const deleteBtn = document.querySelector(".delete");
+const calcButn = document.querySelector(".calcualte");
 console.log(display);
 console.log(integerBtns);
 console.log(operatorBtns);
