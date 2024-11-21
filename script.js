@@ -2,6 +2,8 @@
 const display = document.querySelector('h1');
 const integerBtns = document.querySelectorAll(".integer");
 const operatorBtns = document.querySelectorAll(".operator");
+const resetBtn = document.querySelector(".reset");
+const deleteBtn = document.querySelector(".delete");
 console.log(display);
 console.log(integerBtns);
 console.log(operatorBtns);
@@ -28,13 +30,13 @@ function toScreen() { // funckja dopsujaca liczby na ekran kalkualtora
 }
 
 function reset() { // funckja czyszaca ekran kalkulatora
-    operatorBtns[0].addEventListener("click", () => {
+    resetBtn.addEventListener("click", () => {
         display.innerText = 0;
     })
 }
 
 function delDigit() { // Funckja usuwa ostania wpisana liczbe
-    operatorBtns[1].addEventListener("click", (btn) => {
+    deleteBtn.addEventListener("click", (btn) => {
         if( display.textContent.length == 0 || display.textContent.length == 1) {
             return;
         }
@@ -43,6 +45,7 @@ function delDigit() { // Funckja usuwa ostania wpisana liczbe
         }
     })
 }
+
 // Wywolania funkcji
 
 toScreen();
