@@ -10,7 +10,7 @@ A simple calculator project built using HTML, CSS, and JavaScript.
 
 ## Demo
 
-You can try out the live demo [here](https://github.com/Cooki3GOD/simpleCalculator/blob/main/index.html).
+You can try out the live demo [here](https://raw.githack.com/Cooki3GOD/simpleCalculator/main/index.html).
 
 ## Screenshot
 
@@ -43,4 +43,4 @@ Contributions are welcome! Please fork this repository and submit a pull request
 
 ## Contact
 
-For any questions or feedback, feel free to open an issue or contact me at [your-email@example.com].
+For any questions or feedback, feel free to open an issue or contact me at [asamaelcontact@gmail.com].
